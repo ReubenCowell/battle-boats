@@ -12,3 +12,4 @@
 /Users/reubencowell/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege/Notes/Computer Science/C#/Battle Boats/obj/Debug/net8.0/Battle Boats.pdb
 /Users/reubencowell/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege/Notes/Computer Science/C#/Battle Boats/obj/Debug/net8.0/Battle Boats.genruntimeconfig.cache
 /Users/reubencowell/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege/Notes/Computer Science/C#/Battle Boats/obj/Debug/net8.0/ref/Battle Boats.dll
+/Users/reubencowell/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege/Notes/Computer Science/C#/Battle Boats/obj/Debug/net8.0/Battle Boats.sourcelink.json
