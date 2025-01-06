@@ -11,6 +11,9 @@ class Program
 
     static void Main(string[] args)
     {
+        BlankGrids(); // calls the blank grid procedure to reset the game
+        
+        
         MainMenu();
     }
 
@@ -54,6 +57,19 @@ class Program
         }
     }
 
+    static void DisplayGrid(char[,] grid)
+    {
+        Console.WriteLine(" A B C D E F G H"); // Displays top row of letters
+        for (int i = 0; i < 8; i++)
+        {
+            Console.Write(i + 1 + " "); // Displays the column of numbers
+            for (int j = 0; j < 8; j++)
+            {
+                Console.Write(grid[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
 
 static void ShowInstructions()
     {
