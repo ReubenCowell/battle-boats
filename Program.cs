@@ -12,9 +12,11 @@ class Program
     static void Main(string[] args)
     {
         BlankGrids(); // calls the blank grid procedure to reset the game
+        GridSetUp(player1FleetGrid);
+        DisplayGrid(player1FleetGrid);
         
         
-        MainMenu();
+        //MainMenu();
     }
 
     static void BlankGrids() // resets grids to be blank with dashes 
@@ -68,6 +70,36 @@ class Program
                 Console.Write(grid[i, j] + " ");
             }
             Console.WriteLine();
+        }
+    }
+
+    static void GridSetUp(char[,] grid)
+    {
+        int boat_count = 1;
+        while (boat_count < 6)
+        {
+            Console.Clear();
+            Console.WriteLine("Curent Grid:");
+            DisplayGrid(grid);
+            
+            Console.WriteLine($"Boat {boat_count}:");
+            
+            //TODO: Change this to an entry method of a letter and a number, eg. A1 
+            Console.WriteLine("Enter X coordinate: "); // TODO: Add error exception for entries over 8 
+            int boat_x_coordinate  = int.Parse(Console.ReadLine())-1;
+            Console.WriteLine("Enter Y coordinate: ");
+            int boat_y_coordinate  = int.Parse(Console.ReadLine())-1;
+            
+            
+            if (grid[boat_x_coordinate, boat_y_coordinate] == '-')
+            {
+                grid[boat_x_coordinate, boat_y_coordinate] = 'B';
+                boat_count++;
+            }
+            else
+            {
+                Console.WriteLine("A boat is already there");
+            }
         }
     }
 
