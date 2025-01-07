@@ -12,10 +12,12 @@ class Program
     static void Main(string[] args)
     {
         BlankGrids(); // calls the blank grid procedure to reset the game
-        GridSetUp(player1FleetGrid);
-        DisplayGrid(player1FleetGrid);
-        
-        
+        //PlayerGridSetUp(player1FleetGrid);
+        //DisplayGrid(player1FleetGrid);
+        ComputerGridSetup(player2FleetGrid);
+        DisplayGrid(player2FleetGrid);
+
+
         //MainMenu();
     }
 
@@ -69,11 +71,12 @@ class Program
             {
                 Console.Write(grid[i, j] + " ");
             }
+
             Console.WriteLine();
         }
     }
 
-    static void GridSetUp(char[,] grid)
+    static void PlayerGridSetUp(char[,] grid)
     {
         int boat_count = 1;
         while (boat_count < 6)
@@ -81,16 +84,16 @@ class Program
             Console.Clear();
             Console.WriteLine("Curent Grid:");
             DisplayGrid(grid);
-            
+
             Console.WriteLine($"Boat {boat_count}:");
-            
+
             //TODO: Change this to an entry method of a letter and a number, eg. A1 
             Console.WriteLine("Enter X coordinate: "); // TODO: Add error exception for entries over 8 
-            int boat_x_coordinate  = int.Parse(Console.ReadLine())-1;
+            int boat_x_coordinate = int.Parse(Console.ReadLine()) - 1;
             Console.WriteLine("Enter Y coordinate: ");
-            int boat_y_coordinate  = int.Parse(Console.ReadLine())-1;
-            
-            
+            int boat_y_coordinate = int.Parse(Console.ReadLine()) - 1;
+
+
             if (grid[boat_x_coordinate, boat_y_coordinate] == '-')
             {
                 grid[boat_x_coordinate, boat_y_coordinate] = 'B';
@@ -103,6 +106,27 @@ class Program
         }
     }
 
+    static void ComputerGridSetup(char[,] grid)
+    {
+        // TODO: Add a computer grid generator
+        int boat_count = 0;
+        while (boat_count < 5)
+        {
+            Random rand = new Random();
+            int row = rand.Next(0, 8);
+            int col = rand.Next(0, 8);
+
+            if (grid[row, col] == '-')
+            {
+                grid[row, col] = 'B';
+                boat_count++;
+            }
+
+        }
+
+    }
+
+
 static void ShowInstructions()
     {
         Console.Clear();
@@ -113,4 +137,4 @@ static void ShowInstructions()
         Console.WriteLine(" Press Enter to return to the menu.");
         Console.ReadLine();
     }
-}
+} 
